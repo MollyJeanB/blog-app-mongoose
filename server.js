@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(morgan("common"));
 
 app.get("/posts", (req, res) => {
+  // debugger;
   BlogPost.find()
     .then(posts => {
       res.json(posts.map(post => post.serialize()));
